@@ -1,0 +1,143 @@
+:root {
+    --azulOscuro: #223240;
+    --verdeOscuro: #347355;
+    --verdeMedio: #3B8C66;
+    --verdeClaro: #60BF81;
+    --verdeLima: #93D94E;
+    --contraste: #FF4858;
+
+    --fuente: 'Roboto Mono', monospace;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */    
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuente);
+    font-size: 2rem;
+    line-height: 2;
+    margin: 0;
+}
+
+/** Globales **/
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+    margin: 0;
+}
+h1 {
+    font-size: 4.8rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.2rem;
+}
+h4 {
+    font-size: 2.8rem;
+}
+img {
+    max-width: 100%;
+}
+
+/** Contenido **/
+
+/** Principal **/
+.main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #223240;
+    text-align: center;
+    color: white;
+}
+
+.principal h1 {
+    font-size: 10rem;
+    margin: 0 0 6rem 0;
+}
+
+.principal p {
+    font-size: 3rem;
+}
+
+.maquina-escribir {
+    position: relative;
+}
+
+.maquina-escribir::after {
+    content: "";
+    border-left: .5rem solid white;
+    background: #223240;
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    animation: maquinaescribir 3s infinite alternate steps(30);
+}
+
+@keyframes maquinaescribir {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.titulares {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+ /** Opciones **/
+
+.opciones {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    height: 100%;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+
+.lugares {
+    background-color: #3B8C66;
+    box-shadow: -5px 0px 3px 0px rgba(0,0,0,0.4);
+}
+
+.peliculas{
+    background-color: #60BF81;
+    box-shadow: -5px 0px 3px 0px rgba(0,0,0,0.4);
+}
+
+.contactos {
+    background-color: #93D94E;
+    box-shadow: -5px 0px 3px 0px rgba(0,0,0,0.4);
+}
+
+.lugares:hover, .peliculas:hover, .contactos:hover {
+    background-color: var(--contraste);
+}
